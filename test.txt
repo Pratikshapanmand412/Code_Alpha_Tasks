@@ -1,0 +1,44 @@
+mysql> create table userinfo(
+    -> username varchar(30) primary key,
+    -> password varchar(30)unique,
+    -> emailid varchar(30),
+    -> logintime time);
+Query OK, 0 rows affected (0.82 sec)
+
+mysql> insert into userinfo values
+    -> ('pratiksha','Pass123','pratiksha@gmail.com',10);
+mysql> insert into userinfo values
+    -> ('pratiksha','Pass123','pratiksha@gmail.com',10);
+Query OK, 1 row affected (0.14 sec)
+
+mysql> insert into userinfo values
+    -> ('shweta','python123','shweta@gmail.com',11);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> Select count (username) from userinfo where username='firstbit' and password='python123';
+ERROR 1630 (42000): FUNCTION sample.count does not exist. Check the 'Function Name Parsing and Resolution' section in the Reference Manual
+mysql> Select count(username) from userinfo where username='firstbit' and password='python123';
++-----------------+
+| count(username) |
++-----------------+
+|               0 |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql>
+
+
+alter table department
+add foreign key(eid)
+ references (eid)from emp;
+
+select did from dept where did =(
+select * from emp where ename="kelvin");
+ 
+select salary from emp order by salary desc limit 2,1;
+
+select e.ename,e.eid,d.did,d.dname from emp e inner join 
+dept d on e.eid=d.eid;
+
+alter table employee
+change dname to D_name;
